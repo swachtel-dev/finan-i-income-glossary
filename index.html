@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Statement Glossary - FINAN I Unit 4</title>
+    <style>
+        @media print {
+            body {
+                max-width: 100%;
+                margin: 0.4in 0.5in;
+            }
+
+            .glossary {
+                column-count: 2;
+                column-gap: 40px;
+                column-rule: 1px solid #e8dfd1;
+            }
+
+            .ai-prompt {
+                page-break-inside: avoid;
+            }
+
+            .skip-link { display: none; }
+        }
+
+        @media screen {
+            .glossary {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 25px 45px;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.65;
+            color: #2c3e50;
+            background: #f9f7f4;
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 50px 45px 60px 45px;
+        }
+
+        /* Skip to content link */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            background: #8C1D40;
+            color: #ffffff;
+            padding: 12px 24px;
+            z-index: 100;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Screen reader only */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Focus styles */
+        :focus-visible {
+            outline: 2px solid #005fcc;
+            outline-offset: 2px;
+        }
+
+        header {
+            margin-bottom: 45px;
+            padding-bottom: 25px;
+            border-bottom: 3px solid #8C1D40;
+        }
+
+        h1 {
+            font-size: 2.6em;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            color: #5d5241;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        .intro {
+            background: #ffffff;
+            padding: 28px 30px;
+            border-radius: 6px;
+            margin-bottom: 40px;
+            border-left: 4px solid #8C1D40;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        .intro p {
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        .intro strong {
+            color: #8C1D40;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 1.65em;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-top: 45px;
+            margin-bottom: 22px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e8dfd1;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .structure-section {
+            margin-bottom: 45px;
+        }
+
+        .structure-diagram {
+            background: #ffffff;
+            padding: 30px 35px;
+            border-radius: 6px;
+            border: 1px solid #e8dfd1;
+            font-family: 'Courier New', monospace;
+            font-size: 1em;
+            line-height: 2.4;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        .structure-line {
+            display: flex;
+            align-items: baseline;
+            padding: 3px 0;
+        }
+
+        .structure-diagram .operator {
+            color: #92400e;
+            font-weight: 700;
+            font-size: 1em;
+            display: inline-block;
+            min-width: 80px;
+            flex-shrink: 0;
+        }
+
+        .structure-diagram .revenue {
+            color: #047857;
+            font-weight: 600;
+        }
+
+        .structure-diagram .expense {
+            color: #b91c1c;
+        }
+
+        .structure-diagram .profit {
+            color: #1d4ed8;
+            font-weight: 600;
+        }
+
+        .structure-diagram .note {
+            color: #57534e;
+            font-size: 0.88em;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-style: italic;
+            margin-left: 8px;
+        }
+
+        .ai-prompt {
+            background: linear-gradient(135deg, #fef3e7 0%, #fef8f0 100%);
+            border: 2px solid #f4a460;
+            border-radius: 6px;
+            padding: 18px 22px;
+            margin: 35px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+        }
+
+        .ai-prompt .label {
+            font-size: 0.85em;
+            font-weight: 700;
+            color: #9a3412;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .ai-prompt .prompt-text {
+            font-size: 1.02em;
+            color: #2c3e50;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .ai-prompt .prompt-text:before {
+            content: '\201C';
+            color: #9a3412;
+            font-size: 1.3em;
+            margin-right: 4px;
+        }
+
+        .ai-prompt .prompt-text:after {
+            content: '\201D';
+            color: #9a3412;
+            font-size: 1.3em;
+            margin-left: 4px;
+        }
+
+        .section-intro {
+            font-style: italic;
+            color: #57534e;
+            margin-bottom: 22px;
+            font-size: 0.98em;
+        }
+
+        .term {
+            break-inside: avoid;
+            page-break-inside: avoid;
+            margin-bottom: 25px;
+        }
+
+        .term dt {
+            font-weight: 700;
+            font-size: 1.12em;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .term dd {
+            color: #4a4a4a;
+            line-height: 1.65;
+            font-size: 0.98em;
+        }
+
+        .term .example {
+            margin-top: 11px;
+            padding: 12px 16px;
+            background: #ffffff;
+            border-radius: 4px;
+            font-size: 0.92em;
+            color: #57534e;
+            font-style: italic;
+            border-left: 3px solid #d4a574;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .term .formula {
+            margin-top: 11px;
+            padding: 11px 16px;
+            background: #eff6ff;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.92em;
+            color: #1e40af;
+            border-left: 3px solid #3b82f6;
+        }
+
+        .term .note {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #57534e;
+            font-style: italic;
+        }
+
+        footer {
+            background: #ffffff;
+            padding: 30px 35px;
+            border-radius: 6px;
+            margin-top: 50px;
+            border: 1px solid #e8dfd1;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        footer h2 {
+            margin-top: 0;
+            font-size: 1.4em;
+            border-bottom: none;
+            margin-bottom: 18px;
+        }
+
+        footer .intro-text {
+            color: #57534e;
+            margin-bottom: 20px;
+            font-size: 0.96em;
+        }
+
+        footer ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        footer li {
+            margin-bottom: 18px;
+            padding-left: 22px;
+            position: relative;
+        }
+
+        footer li:before {
+            content: "\2192";
+            position: absolute;
+            left: 0;
+            color: #8C1D40;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        footer a {
+            color: #2563eb;
+            text-decoration: underline;
+        }
+
+        footer a:hover {
+            color: #1d4ed8;
+        }
+
+        footer strong {
+            color: #1a1a1a;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        footer .description {
+            font-size: 0.92em;
+            color: #57534e;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .glossary {
+                grid-template-columns: 1fr !important;
+                gap: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <h1>Income Statement Glossary</h1>
+        <p class="subtitle">Essential terms for understanding how companies make money</p>
+    </header>
+
+    <main id="main-content">
+        <div class="intro" role="region" aria-label="Introduction">
+            <p>An <strong>income statement</strong> tells you how much money a company made (or lost) over a specific period. It answers three questions: How much did we bring in? How much did we spend? What's left over?</p>
+            <p>This document defines the terms you'll encounter in the Chipotle case. Everything here is what you need to read an income statement and understand how a business makes money.</p>
+        </div>
+
+        <section class="structure-section" aria-label="Income statement structure">
+            <h2>The Basic Structure</h2>
+
+            <div class="structure-diagram" role="img" aria-label="Income statement structure: Revenue minus Cost of Goods Sold equals Gross Profit, minus Operating Expenses equals Operating Income, minus Interest and Taxes equals Net Income (final profit).">
+                <div class="structure-line" aria-hidden="true">
+                    <span class="revenue">Revenue</span>
+                    <span class="note">(money coming in)</span>
+                </div>
+                <div class="structure-line" aria-hidden="true">
+                    <span class="operator">MINUS</span>
+                    <span class="expense">Cost of Goods Sold</span>
+                    <span class="note">(direct costs)</span>
+                </div>
+                <div class="structure-line" aria-hidden="true">
+                    <span class="operator">=</span>
+                    <span class="profit">Gross Profit</span>
+                </div>
+                <div class="structure-line" aria-hidden="true">
+                    <span class="operator">MINUS</span>
+                    <span class="expense">Operating Expenses</span>
+                    <span class="note">(labor, rent, etc.)</span>
+                </div>
+                <div class="structure-line" aria-hidden="true">
+                    <span class="operator">=</span>
+                    <span class="profit">Operating Income</span>
+                </div>
+                <div class="structure-line" aria-hidden="true">
+                    <span class="operator">MINUS</span>
+                    <span class="expense">Interest &amp; Taxes</span>
+                </div>
+                <div class="structure-line" aria-hidden="true">
+                    <span class="operator">=</span>
+                    <span class="profit">Net Income</span>
+                    <span class="note">(final profit)</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="ai-prompt" role="region" aria-label="AI prompt suggestion">
+            <div class="label">Try asking your LLM</div>
+            <p class="prompt-text">Explain the difference between gross profit and net income using a simple lemonade stand example. Make up some numbers and make it really clear, I'm taking my first finance course.</p>
+        </div>
+
+        <section aria-label="Revenue terms">
+            <h2>Revenue: Money Coming In</h2>
+
+            <div class="glossary">
+                <dl class="term">
+                    <dt>Revenue</dt>
+                    <dd>The total money a company receives from selling its products or services before paying any expenses. For a restaurant, this is money from selling food and drinks.
+                        <div class="example">If a restaurant makes $100 million from food sales and $2 million from catering, total revenue is $102 million</div>
+                    </dd>
+                </dl>
+
+                <dl class="term">
+                    <dt>Revenue Streams</dt>
+                    <dd>The different ways a company makes money. Most companies have multiple sources of revenue. Breaking these out helps you understand what drives the business.
+                        <div class="example">A coffee shop might have: drink sales (main revenue), food sales, merchandise, and licensing fees</div>
+                    </dd>
+                </dl>
+            </div>
+        </section>
+
+        <section aria-label="Expense terms">
+            <h2>Expenses: Money Going Out</h2>
+
+            <p class="section-intro">Expenses are organized by what the money is spent on. Each category tells you something about how the business operates.</p>
+
+            <div class="glossary">
+                <dl class="term">
+                    <dt>Cost of Goods Sold (COGS)</dt>
+                    <dd>The direct cost of making whatever you sell. For a restaurant, this is food, beverages, and packaging. For a manufacturer, it would be raw materials and factory labor.
+                        <div class="note">Note: Many companies show COGS as a single line item. Chipotle breaks it into subcategories (Food, Beverage, Packaging) for more detail, but the concept is the same.</div>
+                        <div class="example">If a burrito costs $4.00 in ingredients and packaging to make, and you sell 1 million burritos, COGS is $4 million</div>
+                    </dd>
+                </dl>
+
+                <dl class="term">
+                    <dt>Gross Profit</dt>
+                    <dd>What's left after you subtract the direct costs of making your product. This shows how much markup you have to cover all your other expenses (labor, rent, corporate overhead, etc.).
+                        <div class="formula">Gross Profit = Revenue - Cost of Goods Sold</div>
+                        <div class="example">If you sell burritos for $10 and they cost $4 in ingredients, your gross profit is $6 per burrito</div>
+                    </dd>
+                </dl>
+
+                <dl class="term">
+                    <dt>Labor Costs</dt>
+                    <dd>Wages and benefits for employees who work in the stores or deliver the product. This is separate from corporate headquarters staff (that's G&amp;A).
+                        <div class="example">Store employees making burritos, running registers, and cleaning are labor costs. The CFO in the corporate office is G&amp;A.</div>
+                    </dd>
+                </dl>
+
+                <dl class="term">
+                    <dt>Occupancy Costs</dt>
+                    <dd>Rent and related costs for the physical space: monthly lease payments, property taxes, utilities. The cost of having a building.
+                        <div class="example">For a restaurant chain with 1,000 locations paying average rent of $5,000/month, annual occupancy is at least $60 million</div>
+                    </dd>
+                </dl>
+
+                <dl class="term">
+                    <dt>Operating Expenses</dt>
+                    <dd>The costs of running the business day-to-day, excluding the direct cost of making the product. Includes labor, rent, marketing, equipment, supplies, etc. Everything between gross profit and operating income.
+                    </dd>
+                </dl>
+
+                <dl class="term">
+                    <dt>General &amp; Administrative (G&amp;A)</dt>
+                    <dd>Corporate overhead: headquarters staff, executives, legal, accounting, IT systems. The costs of managing the company rather than operating individual stores.
+                        <div class="example">The CEO's salary, corporate lawyers, and the finance team at headquarters are all G&amp;A expenses</div>
+                    </dd>
+                </dl>
+            </div>
+        </section>
+
+        <div class="ai-prompt" role="region" aria-label="AI prompt suggestion">
+            <div class="label">Try asking your LLM</div>
+            <p class="prompt-text">I see a company made $10M in restaurant sales and $500K in delivery fees. Explain how to express delivery fees as a percentage of total revenue, and why using percentages is more useful than just dollar amounts for comparing companies. Give sample excel code. Be brief and clear.</p>
+        </div>
+
+        <section aria-label="Profit terms">
+            <h2>Profit: What's Left</h2>
+
+            <p class="section-intro">Income statements show multiple types of profit. Each one answers a different question about the business.</p>
+
+            <div class="glossary">
+                <dl class="term">
+                    <dt>Operating Income</dt>
+                    <dd>Profit from the core business operations, before accounting for financing costs (interest) or taxes. This shows whether the business model itself is profitable, regardless of how it's financed.
+                        <div class="formula">Operating Income = Revenue - All Operating Expenses</div>
+                        <div class="example">A company with $500M revenue and $400M in operating expenses has $100M operating income</div>
+                    </dd>
+                </dl>
+
+                <dl class="term">
+                    <dt>Net Income</dt>
+                    <dd>The final profit after absolutely everything: operating expenses, interest, and taxes. This is what the company actually keeps. Often called "the bottom line" because it appears at the bottom of the income statement.
+                        <div class="formula">Net Income = Operating Income - Interest - Taxes</div>
+                        <div class="example">If operating income is $100M, interest is $5M, and taxes are $20M, net income is $75M</div>
+                    </dd>
+                </dl>
+
+                <dl class="term">
+                    <dt>Income Tax Expense</dt>
+                    <dd>What the company pays to the government based on its profits. In the US, the federal corporate tax rate is 21%, though the effective rate companies actually pay often differs due to deductions, credits, and other factors.
+                        <div class="example">A company with $100M in pre-tax income might pay anywhere from $15M to $25M in taxes depending on its specific tax situation</div>
+                    </dd>
+                </dl>
+
+                <dl class="term">
+                    <dt>Interest Expense</dt>
+                    <dd>Cost of borrowing money. Companies with significant debt pay interest to lenders. Companies with little or no debt have low interest expense. This appears "below the line" because it's a financing decision, not an operating performance metric.
+                        <div class="example">A company with $500M in debt at 6% interest pays roughly $30M per year in interest expense</div>
+                    </dd>
+                </dl>
+            </div>
+        </section>
+
+        <section aria-label="Key metrics">
+            <h2>Key Metrics: Making Comparisons</h2>
+
+            <p class="section-intro">Raw profit numbers don't tell you much without context. A $10M profit is great for a small company but terrible for a giant one. These ratios let you compare companies of different sizes or track performance over time.</p>
+
+            <div class="glossary">
+                <dl class="term">
+                    <dt>Gross Margin</dt>
+                    <dd>Gross profit as a percentage of revenue. Shows how much markup you have after direct costs. Higher is generally better, though what's "good" varies by industry.
+                        <div class="formula">Gross Margin = (Gross Profit / Revenue) x 100%</div>
+                        <div class="example">If a company has $100M revenue and $30M COGS, gross profit is $70M and gross margin is 70%</div>
+                    </dd>
+                </dl>
+
+                <dl class="term">
+                    <dt>Operating Margin</dt>
+                    <dd>Operating income as a percentage of revenue. Shows how efficiently the core business generates profit before financing and taxes. This is a key metric for comparing business models.
+                        <div class="formula">Operating Margin = (Operating Income / Revenue) x 100%</div>
+                        <div class="example">A 15% operating margin means the company keeps 15 cents of operating income for every dollar of sales</div>
+                    </dd>
+                </dl>
+
+                <dl class="term">
+                    <dt>Net Margin</dt>
+                    <dd>Net income as a percentage of revenue. Shows how much profit the company actually keeps after everything. This is the final profitability measure and the most commonly cited margin.
+                        <div class="formula">Net Margin = (Net Income / Revenue) x 100%</div>
+                        <div class="example">A 10% net margin means the company keeps 10 cents of profit for every dollar in sales</div>
+                    </dd>
+                </dl>
+
+                <dl class="term">
+                    <dt>Profit Per Unit</dt>
+                    <dd>How much profit a company makes on each thing they sell. Divide net income by total units sold. Useful for understanding economics at the transaction level and comparing efficiency across businesses.
+                        <div class="formula">Profit Per Unit = Net Income / Total Units Sold</div>
+                        <div class="example">If a restaurant makes $50M in profit and serves 30M meals, profit per meal is $1.67</div>
+                    </dd>
+                </dl>
+            </div>
+        </section>
+
+        <div class="ai-prompt" role="region" aria-label="AI prompt suggestion">
+            <div class="label">Try asking your LLM</div>
+            <p class="prompt-text">I calculated a restaurant's net margin and it's 11%. That sounds low, like they're barely making money. Am I thinking about this wrong? Help me understand what counts as a 'good' vs 'bad' net margin for a restaurant. I'm a student in an intro finance course.</p>
+        </div>
+    </main>
+
+    <footer>
+        <h2>Want to Go Deeper?</h2>
+        <p class="intro-text">These resources provide more comprehensive coverage of income statements and financial analysis. Use them if you want more detail or different explanations.</p>
+
+        <ul role="list">
+            <li>
+                <strong><a href="https://www.sec.gov/about/reports-publications/investorpubsbegfinstmtguide" rel="noopener" target="_blank">SEC Beginner's Guide to Financial Statements<span class="sr-only"> (opens in new tab)</span></a></strong>
+                <div class="description">Official government guide. Clear, authoritative, covers all three main financial statements.</div>
+            </li>
+            <li>
+                <strong><a href="https://online.hbs.edu/blog/post/income-statement-analysis" rel="noopener" target="_blank">Harvard Business School: Income Statement Analysis<span class="sr-only"> (opens in new tab)</span></a></strong>
+                <div class="description">Explains how to read an income statement with practical examples.</div>
+            </li>
+            <li>
+                <strong><a href="https://www.bench.co/blog/accounting/how-to-read-income-statement" rel="noopener" target="_blank">Bench Accounting: How to Read an Income Statement<span class="sr-only"> (opens in new tab)</span></a></strong>
+                <div class="description">Simple, beginner-friendly walkthrough of each line item.</div>
+            </li>
+            <li>
+                <strong><a href="https://www.britannica.com/money/profit-margin-types" rel="noopener" target="_blank">Britannica Money: Profit Margin Types Explained<span class="sr-only"> (opens in new tab)</span></a></strong>
+                <div class="description">Clear explanation of gross, operating, and net margins with examples.</div>
+            </li>
+            <li>
+                <strong><a href="https://corporatefinanceinstitute.com/resources/accounting/profit-margin/" rel="noopener" target="_blank">Corporate Finance Institute: Profit Margin<span class="sr-only"> (opens in new tab)</span></a></strong>
+                <div class="description">More detailed breakdown with formulas and industry benchmarks.</div>
+            </li>
+        </ul>
+    </footer>
+</body>
+</html>
